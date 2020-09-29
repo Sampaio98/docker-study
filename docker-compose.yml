@@ -1,0 +1,35 @@
+version: "3"
+services:
+  app:
+    network_mode: bridge
+    container_name: app-springboot-postgresql
+    image: app-springboot-postgresql
+    build: ./
+    restart: always
+    volumes:
+      - ./:/app
+      - ~/.m2:/root/.m2
+    expose:
+      - 8080
+    ports:
+      - "8080:8080"
+    depends_on:
+      - dbpostgresql
+    links:
+      - dbpostgresql:dbpostgresql
+  dbpostgresql:
+    image: postgres:latest
+    network_mode: bridge
+    restart: always
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    expose:
+      - 5432
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+volumes:
+  postgres-data:
