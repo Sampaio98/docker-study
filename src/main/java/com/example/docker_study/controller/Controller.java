@@ -12,7 +12,7 @@ import java.util.Map;
 public class Controller {
 
     @GetMapping
-    public ResponseEntity<?> hello() {
-        return ResponseEntity.ok().body(Map.of("message", "Hello World"));
+    public ResponseEntity<?> welcome() {
+        return ResponseEntity.ok().body(Map.of("message", "Welcome to Docker Studying project!"));
     }
 }
