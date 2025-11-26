@@ -17,10 +17,7 @@
 - [Installation](#-installation)
 - [Usage](#-usage)
 - [Docker Commands](#-docker-commands)
-- [Project Structure](#-project-structure)
 - [Technologies](#️-technologies)
-- [Contributing](#-contributing)
-- [License](#-license)
 
 ---
 
